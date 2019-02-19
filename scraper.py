@@ -14,7 +14,7 @@ print(html)
 
 # # Find something on the page using css selectors
 root = lxml.html.fromstring(html)
-print(root.cssselect("div#a"))
+print(root.cssselect("a"))
 # This line always finds a list, even if there's nothing in the list.
 
 # # Write out to the sqlite database using scraperwiki library
