@@ -30,15 +30,21 @@ for match in listofmatches:
   print(record)
   scraperwiki.sqlite.save(unique_keys=["link"],data=record)
 
+secondrecord = {}
+  
 secondlistofmatches = root.cssselect("div#footer")
 for matchtwo in secondlistofmatches:
   print(matchtwo)
   print(lxml.html.tostring(matchtwo))
+  secondrecord["footer"]=lxml.html.tostring(matchtwo)
+  print(secondrecord)
+  scraperwiki.sqlite.save(unique_keys=["footer"],data=secondrecord)
+  
 
 # Make a dictionary of the items you've scraped - go back before the loop [for, in lists] begins
 
   
-# # Write out to the sqlite database using scraperwiki library
+# # Write out to the sqlite database using scraperwiki library  -- inside the loop
 # scraperwiki.sqlite.save(
 # (unique_keys=['name'], data={"name": "susan", "occupation": "software developer"})
 #
