@@ -6,8 +6,9 @@ import lxml.html
 #
 print("Hello")
 # # Read in a page
-html = scraperwiki.scrape("https://www.catskillhiker.net/Catskill35/peak_list.shtml")
-# "http://foo.com")
+html = scraperwiki.scrape("http://foo.com")
+# "https://www.catskillhiker.net/Catskill35/peak_list.shtml")
+# 
 print(html)
 #This has scraped the full html code from that website.
 
