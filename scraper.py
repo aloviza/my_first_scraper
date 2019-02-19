@@ -1,8 +1,8 @@
 # This is a template for a Python scraper on morph.io (https://morph.io)
 # including some code snippets below that you should find helpful
 # The next two lines import two libraries. Scraperwiki is a library of scrapers used for scraping webpages.
-# import scraperwiki
-# import lxml.html
+import scraperwiki
+import lxml.html
 #
 print("Hello")
 # # Read in a page
