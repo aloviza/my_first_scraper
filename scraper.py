@@ -19,19 +19,28 @@ print(root.cssselect("div#footer"))
 print(root)
 # This line always finds a list, even if there's nothing in the list.
 
+record = {}
+
 # Separate out the different items in the list:
 listofmatches = root.cssselect("a")
 for match in listofmatches:
   print(match)
   print(lxml.html.tostring(match))
+  record["link"]=lxml.html.tostring(match)
+  print(record)
+  scraperwiki.sqlite.save(unique_keys=["link"],data={record})
 
 secondlistofmatches = root.cssselect("div#footer")
 for matchtwo in secondlistofmatches:
   print(matchtwo)
   print(lxml.html.tostring(matchtwo))
 
+# Make a dictionary of the items you've scraped - go back before the loop [for, in lists] begins
+
+  
 # # Write out to the sqlite database using scraperwiki library
-# scraperwiki.sqlite.save(unique_keys=['name'], data={"name": "susan", "occupation": "software developer"})
+# scraperwiki.sqlite.save(
+# (unique_keys=['name'], data={"name": "susan", "occupation": "software developer"})
 #
 # # An arbitrary query against the database
 # scraperwiki.sql.select("* from data where 'name'='peter'")
